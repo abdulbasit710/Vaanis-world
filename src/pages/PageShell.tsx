@@ -1,0 +1,21 @@
+import {InnerBanner} from '../components/InnerBanner';
+import {Author3DCard} from '../components/ui/3d-card';
+import {AboutNarrative} from '../components/AboutNarrative';
+import {ManzilFeature} from '../components/ManzilFeature';
+import {AboutFaq} from '../components/AboutFaq';
+import {CharacterCarousel} from '../components/ui/character-carousel';
+import {siteContent} from '../data/siteContent';
+import {BookShowcase} from '../components/BookShowcase';
+import {BookLogoSlider} from '../components/BookLogoSlider';
+import {AboutMoods} from '../components/AboutMoods';
+import {ContactPage} from './ContactPage';
+type PageKey='about'|'bookshelf'|'kids-activity'|'contact';
+
+const pages:Record<PageKey,{number:string;eyebrow:string;title:string;accent:string;intro:string;note:string}>={
+ about:{number:'01',eyebrow:'The storyteller',title:'About the Author',accent:'#f26a65',intro:'Meet Vaani Halwasiya, the imagination behind the forest.',note:'A closer look at the young imagination behind the forest.'},
+ bookshelf:{number:'02',eyebrow:'Stories to treasure',title:'Book Shelf',accent:'#f5b63a',intro:'A beautiful home for books, characters, and worlds created by Vaani.',note:'Book editions and purchase information will be added here.'},
+ 'kids-activity':{number:'04',eyebrow:'Play - Make - Imagine',title:'Kids Activity',accent:'#9b6ac8',intro:'Creative little adventures inspired by kindness and the natural world.',note:'Downloadable and interactive activities will be added here.'},
+ contact:{number:'05',eyebrow:'Send a little note',title:'Contact with Author',accent:'#279ccb',intro:'For readers, schools, libraries, events, and thoughtful collaborations.',note:'Approved contact details and enquiry options will be added here.'}
+};
+
+export function PageShell({page}:{page:PageKey}){if(page==='contact')return <ContactPage/>;if(page==='about')return <main className="aboutPage"><InnerBanner title="About the Author" eyebrow="The storyteller" tagline="Meet Vaani Halwasiya, the young imagination behind a forest where every feeling belongs."/><section className="vaaniStory aboutStory"><Author3DCard imageUrl="/assets/vaani-author.jpeg" title="Vaani Halwasiya" subtitle="A young voice with a forest full of stories." href="#vaani-story"/><div className="vaaniStoryCopy"><p className="vaaniStoryEyebrow">Meet the imagination behind the forest</p><h2>A young storyteller with <em>a forest full of feelings.</em></h2><p className="vaaniStoryLead">Vaani Halwasiya created <i>The Soul of the Forest</i> to help children recognize their feelings and discover what helps them feel like themselves again.</p><p>Dottie's need for rest, Mona's playful energy, Knotty's worry and Voz's song all reflect different parts of Vaani. Through her forest friends, she makes space for joy, frustration, tiredness and everything in between.</p><p>Her story is rooted in the comfort of family and friendship, and in little things that help: a break, a song, a creative moment or someone who listens.</p><div className="vaaniStorySignature"><span>Every mood belongs here.</span><a href="#vaani-story">Explore her story <b>&darr;</b></a></div></div></section><AboutNarrative/><AboutMoods/><ManzilFeature/><AboutFaq/></main>;if(page==='bookshelf')return <main className="bookshelfPage"><InnerBanner title="Book Shelf" eyebrow="Stories to treasure" tagline="Step into Vaani's forest and meet the friends who make every feeling feel at home."/><section id="characters" className="forestCharacters forestCharactersCarousel"><div className="forestCharactersHead"><span>Meet the forest</span><h2>Every feeling has a friend.</h2><p>These forest friends carry little pieces of Vaani's own moods. Explore their stories, one friend at a time.</p></div><CharacterCarousel characters={siteContent.characters}/></section><BookShowcase/><BookLogoSlider/></main>;const item=pages[page];return <main className="innerPage" style={{'--page-accent':item.accent} as React.CSSProperties}><InnerBanner title={item.title} eyebrow={item.eyebrow} tagline={item.intro}/><section className="pageCanvas"><p>THIS CHAPTER IS READY FOR ITS STORY</p><h2>{item.note}</h2><a href="/" className="button primary">Return to the forest <b>&larr;</b></a></section></main>}

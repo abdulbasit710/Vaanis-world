@@ -1,0 +1,30 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const assetDir=path.resolve('public/assets/manuscript');
+const files=fs.readdirSync(assetDir).filter(name=>/^page-\d+\.jpg$/.test(name)).sort();
+const output=path.join(assetDir,'the-soul-of-the-forest-manuscript.pdf');
+const chunks=[];
+const offsets=[];
+let length=0;
+const add=value=>{const data=Buffer.isBuffer(value)?value:Buffer.from(value,'binary');chunks.push(data);length+=data.length;};
+const start=id=>{offsets[id]=length;add(`${id} 0 obj\n`);};
+const end=()=>add('endobj\n');
+add('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+const pageIds=files.map((_,i)=>3+i*3);
+start(1);add('<< /Type /Catalog /Pages 2 0 R >>\n');end();
+start(2);add(`<< /Type /Pages /Count ${files.length} /Kids [${pageIds.map(id=>`${id} 0 R`).join(' ')}] >>\n`);end();
+files.forEach((name,i)=>{
+  const page=pageIds[i],image=page+1,content=page+2;
+  const jpeg=fs.readFileSync(path.join(assetDir,name));
+  const draw=Buffer.from(`q 1600 0 0 800 0 0 cm /Im${i} Do Q\n`);
+  start(page);add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1600 800] /Resources << /XObject << /Im${i} ${image} 0 R >> >> /Contents ${content} 0 R >>\n`);end();
+  start(image);add(`<< /Type /XObject /Subtype /Image /Width 1600 /Height 800 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>\nstream\n`);add(jpeg);add('\nendstream\n');end();
+  start(content);add(`<< /Length ${draw.length} >>\nstream\n`);add(draw);add('endstream\n');end();
+});
+const xref=length;
+add(`xref\n0 ${offsets.length}\n0000000000 65535 f \n`);
+for(let i=1;i<offsets.length;i++)add(`${String(offsets[i]).padStart(10,'0')} 00000 n \n`);
+add(`trailer\n<< /Size ${offsets.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`);
+fs.writeFileSync(output,Buffer.concat(chunks));
+process.stdout.write(`${files.length} pages, ${Math.round(length/1024/1024*10)/10} MB\n`);

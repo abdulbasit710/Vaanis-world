@@ -1,0 +1,14 @@
+import {siteContent} from '../data/siteContent';
+
+export function AboutMoods(){
+  const order=['Cherry Jerry','Voz','Nancy','Dottie','Bumpy','Mona','Knotty'];
+  const characters=order.map(name=>siteContent.characters.find(character=>character.name===name)).filter((character):character is (typeof siteContent.characters)[number]=>Boolean(character));
+  return <section className="aboutMoods" aria-labelledby="aboutMoodsTitle">
+    <div className="aboutMoodsHead"><span>Pieces of Vaani</span><h2 id="aboutMoodsTitle">A little of her in every friend.</h2><p>Each forest character gives a feeling its own face, voice, and way forward.</p></div>
+    <div className="aboutMoodsGrid">{characters.map((character,index)=><article key={character.name} className={character.name==='Cherry Jerry'?'featured':''} style={{'--mood-tint':character.tone} as React.CSSProperties}>
+      <div className="aboutMoodsImage"><img src={character.image} alt={character.alt} loading="lazy"/></div>
+      <div className="aboutMoodsCopy"><span>{String(index+1).padStart(2,'0')} / {character.role}</span><h3>{character.name}</h3><p>{character.description}</p></div>
+    </article>)}</div>
+    <p className="aboutMoodsCoda">Sing and be happy. Hum and be happy. Fly and be happy. <strong>Just be happy.</strong></p>
+  </section>;
+}
