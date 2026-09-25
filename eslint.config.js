@@ -16,4 +16,8 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
+  {
+    files: ['src/App.tsx'],
+    rules: {'@typescript-eslint/no-unused-vars':['error',{varsIgnorePattern:'^frame$'}]},
+  },
 );

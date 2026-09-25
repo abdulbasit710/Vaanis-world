@@ -1,5 +1,5 @@
 export const siteContent={
- nav:[['Home','/'],['About the Author','/about'],['Book Shelf','/bookshelf'],['Kids Activity','/kids-activity'],['Contact with Author','/contact']] as const,
+ nav:[['Home','/'],['About the Author','/about'],['Book Shelf','/books'],['Kids Activity','/kids-activity'],['Contact with Author','/contact']] as const,
  hero:{eyebrow:'A magical story by Vaani Halwasiya',title:'The Soul of the Forest',subtitle:'A warm, imaginative journey through friendship, feelings, kindness and the little things that help us find our way back to happiness.'},
  heroSlides:[
   {src:'/assets/hero/hero-01-optimized.jpg',alt:'Cherry Jerry, a colorful tree in a sunlit forest',eyebrow:'A magical story by Vaani Halwasiya',title:'The Soul of the Forest',subtitle:'A warm, imaginative journey through friendship, feelings, kindness and the little things that help us find our way back to happiness.'},
