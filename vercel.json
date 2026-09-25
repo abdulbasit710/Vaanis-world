@@ -1,7 +1,10 @@
 {
   "rewrites": [
+    {"source": "/about", "destination": "/about/index.html"},
+    {"source": "/books", "destination": "/books/index.html"},
+    {"source": "/contact", "destination": "/contact/index.html"},
     {
-      "source": "/((?!assets/|robots\\.txt$).*)",
+      "source": "/((?!assets/|robots\\\\.txt$|sitemap\\\\.xml$|about/index\\\\.html$|books/index\\\\.html$|contact/index\\\\.html$).*)",
       "destination": "/index.html"
     }
   ]
