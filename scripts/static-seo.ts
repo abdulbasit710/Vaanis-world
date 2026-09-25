@@ -11,7 +11,10 @@ function tags(p:Page){
 export const staticSeo=():Plugin=>({name:'static-route-seo',apply:'build',enforce:'post',generateBundle(_,bundle){
  const asset=bundle['index.html'];
  if(!asset||asset.type!=='asset'||typeof asset.source!=='string')return;
- const base=asset.source.replace(/<title>.*?<\/title>/i,'').replace(/<meta name=.+?description.+?>/i,'').replace(/<meta property=.+?og:.+?>/gi,'');
+ const base=asset.source
+  .replace(/<title>.*?<\/title>/i,'')
+  .replace(/<meta\s+name=['"]description['"][^>]*>/i,'')
+  .replace(/<meta\s+property=['"]og:[^'"]+['"][^>]*>/gi,'');
  for(const [name,p] of Object.entries(pages)){
   const html=base.replace('</head>',head(p)+'</head>');
   if(name==='home')asset.source=html;else this.emitFile({type:'asset',fileName:name+'/index.html',source:html});
