@@ -987,6 +987,100 @@ html,body,#root{overflow-x:clip!important;overflow-y:visible!important}
 .notFound p{color:#9b6536;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 .notFound h1{max-width:760px;margin:.8rem 0 2rem;font:600 clamp(3rem,7vw,6.5rem)/.95 Fraunces,serif;letter-spacing:-.05em}
 
+/* Final mobile layout pass: compact the approved desktop composition without scaling the page. */
+@media(max-width:650px){
+  html,body,#root{width:100%;max-width:100%;overflow-x:clip}
+  main,section,footer{max-width:100%}
+  h1,h2,h3,p,a,button{overflow-wrap:anywhere}
+  .scrollStoryCopy{width:100%;padding:0 6vw 1.1rem}
+  .scrollStoryText{width:100%;max-width:100%}
+  .scrollStoryText h1{max-width:100%;font-size:clamp(2.75rem,13vw,4.1rem);line-height:.9}
+  .scrollStoryDescription{max-width:100%;font-size:.94rem;line-height:1.55}
+  .editorialHeroActions{width:100%;gap:.65rem}
+  .editorialHeroActions a{min-width:0;min-height:48px;padding:.85rem .8rem;font-size:.63rem;white-space:normal}
+  .scrollStoryBottom{left:6vw;right:6vw;width:auto}
+  .scrollStoryNumber{top:1.25rem;right:4.5rem}
+  .vaaniStory,.aboutPage .aboutStory{width:100%;padding-inline:5vw;gap:2.5rem}
+  .vaaniStoryCopy h2{font-size:clamp(2.7rem,12vw,4rem);line-height:.94}
+  .vaaniStoryCopy>p{font-size:.94rem;line-height:1.68}
+  .forestCharactersHead{width:auto;margin-inline:6vw}
+  .forestCharactersHead h2{font-size:clamp(2.8rem,12vw,4rem);line-height:.95}
+  .characterCarousel{width:100%;overflow:hidden}
+  .characterCarouselStage{height:390px;margin-top:.5rem}
+  .characterCarouselCard{width:min(270px,74vw);height:350px;transform:translate(-50%,-50%) translateX(calc(var(--offset) * 39vw)) translateY(calc(var(--distance) * 8px)) rotate(calc(var(--offset) * 3deg)) scale(calc(1 - var(--distance) * .1))}
+  .characterCarouselDetail{min-height:145px;padding-inline:7vw}
+  .characterCarouselNames{padding-inline:5vw}
+  .characterCarouselNames button{min-height:42px;padding:.5rem .45rem}
+}
+@media(max-width:650px){
+  .activityHero{grid-template-columns:1fr;min-height:auto;padding:6rem 5vw 4rem}
+  .activityHeroArt{order:0;width:100%;margin-top:1rem}
+  .activityHero h1{font-size:clamp(3.1rem,14vw,4.3rem);line-height:.88}
+  .activityIntro h2{font-size:clamp(2.8rem,12vw,4rem)}
+  .activityBenefits{grid-template-columns:1fr;margin-bottom:5rem}
+  .activityBenefits article{padding:1.5rem}
+  .homeActivity{grid-template-columns:1fr;gap:3rem;padding:5rem 5vw}
+  .homeActivityCopy h2{font-size:clamp(2.8rem,12vw,4rem)}
+  .puzzleGame{width:94vw;max-width:100%;overflow:hidden}
+  .pieceTray,.puzzleBoard{min-width:0;max-width:100%}
+  .contactStart{padding:4rem 5vw}
+  .contactStartInner,.contactStory{grid-template-columns:minmax(0,1fr);width:100%}
+  .contactCardIntro,.contactForm{min-width:0;padding:1.25rem}
+  .contactCardIntro h2{font-size:clamp(2.7rem,12vw,3.7rem)}
+  .contactFormHead h2{font-size:clamp(2.2rem,10vw,3rem)}
+  .contactFields{grid-template-columns:minmax(0,1fr)}
+  .contactFields label{grid-column:1!important;min-width:0}
+  .contactSubmit button{width:100%;justify-content:space-between}
+  .contactStory{padding:4.5rem 6vw;gap:3rem}
+  .contactPortrait{width:min(330px,calc(100% - 28px))}
+  .contactStoryCopy h2{font-size:clamp(2.8rem,12vw,4rem)}
+  .contactReasons{padding:4.5rem 5vw}
+  .contactReasonsHead h2{font-size:clamp(2.7rem,12vw,3.8rem)}
+  .contactReasonGrid{grid-template-columns:1fr;width:100%}
+  input,select,textarea{font-size:16px!important}
+}
+@media(max-width:380px){
+  .scrollStoryCopy .editorialHeroActions{grid-template-columns:minmax(0,1fr)}
+  .scrollStoryCopy .editorialHeroActions a{width:100%;justify-content:space-between;font-size:.62rem;padding:.75rem .85rem}
+  .scrollStoryText h1{max-width:100%;font-size:clamp(2.3rem,12vw,2.75rem);letter-spacing:-.045em;text-wrap:wrap}
+  .scrollStoryText{margin-bottom:1.4rem}
+  .characterCarouselCard{width:244px;height:338px;transform:translate(-50%,-50%) translateX(calc(var(--offset) * 42vw)) translateY(calc(var(--distance) * 7px)) rotate(calc(var(--offset) * 2.5deg)) scale(calc(1 - var(--distance) * .11))}
+}
+@media(max-width:650px){
+  .innerBanner{min-height:360px}
+  .innerBannerContent,.aboutPage .innerBannerContent{width:100%;padding:6.5rem 6vw 3rem}
+  .innerBanner h1,.aboutPage .innerBanner h1{font-size:clamp(3rem,14vw,4.4rem);line-height:.9}
+  .innerBanner p,.aboutPage .innerBanner p{max-width:100%;font-size:1rem}
+  .aboutMoods{padding:4.5rem 5vw}
+  .aboutMoodsHead h2{font-size:clamp(2.7rem,12vw,3.8rem)}
+  .aboutMoodsGrid{gap:1rem}
+  .aboutMoodsGrid article,.aboutMoodsGrid article.featured{width:100%;max-width:100%;border-radius:1.2rem}
+  .aboutMoodsCopy,.aboutMoodsGrid article.featured .aboutMoodsCopy{padding:1.25rem}
+  .aboutMoodsCopy h3,.aboutMoodsGrid article.featured .aboutMoodsCopy h3{font-size:clamp(1.9rem,9vw,2.7rem)}
+  .aboutMoodsCopy p,.aboutMoodsGrid article.featured .aboutMoodsCopy p{font-size:.88rem;line-height:1.6}
+  .manzilStoryInner{width:88vw;padding-top:5rem}
+  .manzilStoryTop,.manzilStoryPrograms{grid-template-columns:1fr;gap:2.5rem}
+  .manzilStoryHeadline h2{font-size:clamp(2.8rem,12vw,4.1rem)}
+  .manzilStoryConnection{padding-left:1.2rem}
+  .playInvite{padding:5rem 5vw}
+  .playInviteInner{grid-template-columns:1fr;gap:3rem}
+  .playInvite h2{font-size:clamp(3rem,13vw,4.2rem)}
+  .playInviteSteps{display:grid;grid-template-columns:1fr}
+  .playInviteButton{width:100%;justify-content:space-between}
+  .playInviteVisual{width:min(88vw,430px);margin:auto}
+  .bookFeature{grid-template-columns:1fr;padding:5rem 6vw;gap:3rem}
+  .bookFeatureCopy h2{font-size:clamp(3rem,13vw,4.3rem)}
+  .bookDetails{grid-template-columns:1fr}
+  .bookBuy{width:100%;justify-content:space-between}
+  .faq{width:88vw;padding-bottom:6rem}
+  .faq article>button{min-height:60px;font-size:1rem}
+  .footerTop,.footerDirectory,.editorialFooter .foot{padding-left:6vw;padding-right:6vw}
+  .footerTop h2{font-size:clamp(2.8rem,12vw,4.2rem)}
+  .footerDirectory nav{position:static;inset:auto;transform:none;background:transparent;display:grid;grid-template-columns:1fr 1fr;align-items:start;font:inherit;color:inherit}
+  .footerSocials{gap:.55rem}.footerSocials a{min-width:44px;min-height:44px}
+  .foot{gap:.8rem;justify-content:center;text-align:center}
+}
+
 /* Rendering performance: defer off-screen sections and simplify costly mobile compositing */
 .vaaniStory,.forestCharactersCarousel,.manzilFeature,.playInvite,.bookFeature,.faq,.editorialFooter{content-visibility:auto;contain-intrinsic-size:auto 900px}
 @media(max-width:650px){
