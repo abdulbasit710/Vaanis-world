@@ -177,8 +177,8 @@ footer.editorialFooter{background:#123a30;color:#fff8e8}.editorialFooter:before{
 .editorialHeroImage.image-2{z-index:2;width:39%;height:29%;left:2%;bottom:10%;border:6px solid #fff9ea}
 .editorialHeroImage.image-3{z-index:3;width:33%;height:25%;right:5%;top:8%;border:6px solid #fff9ea}
 .forestCharacters{padding:clamp(5rem,8vw,9rem) 6vw;background:#fffaf0;color:#173f35}
-.forestCharactersHead{max-width:720px;margin-bottom:2.8rem}.forestCharactersHead span,.cherryFeature span,.forestHeart span,.mamaStory span{color:#b77a1b;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;font-weight:700}
-.forestCharactersHead h2,.cherryFeature h2,.forestHeart h2,.mamaStory h2{font:600 clamp(2.9rem,5vw,5.7rem)/1 Fraunces,serif;letter-spacing:-.045em;margin:.8rem 0 1.2rem}
+.forestCharactersHead{max-width:720px;margin-bottom:2.8rem}.forestCharactersHead span,.cherryFeature span,.forestHeart span,.mummaStory span{color:#b77a1b;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;font-weight:700}
+.forestCharactersHead h2,.cherryFeature h2,.forestHeart h2,.mummaStory h2{font:600 clamp(2.9rem,5vw,5.7rem)/1 Fraunces,serif;letter-spacing:-.045em;margin:.8rem 0 1.2rem}
 .forestCharactersHead p{font-size:1.1rem;line-height:1.7;max-width:590px}
 .forestCharacterStage{display:grid;grid-template-columns:1fr 1fr;min-height:510px;transition:background-color .35s}
 .forestCharacterArt{display:grid;place-items:center;min-height:420px;overflow:hidden}.forestCharacterArt img{max-width:85%;max-height:460px;width:auto;height:auto;object-fit:contain}
@@ -186,10 +186,10 @@ footer.editorialFooter{background:#123a30;color:#fff8e8}.editorialFooter:before{
 .forestCharacterTabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.5rem}.forestCharacterTabs button{cursor:pointer;border:1px solid #a9b9aa;background:transparent;color:#173f35;padding:.8rem 1rem;font:600 .8rem 'DM Sans',sans-serif}.forestCharacterTabs button[aria-selected=true]{background:#173f35;color:#fff}
 .cherryFeature{position:relative;min-height:620px;display:grid;align-items:end;overflow:hidden;color:#fff;background:#153f32}.cherryFeature>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cherryFeature:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#09271fd9,transparent 85%)}.cherryFeature>div{position:relative;z-index:1;max-width:550px;margin:6vw;padding:2rem 0}.cherryFeature span{color:#f6cf69}.cherryFeature p{font-size:1.15rem;line-height:1.7}
 .forestHeart{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;overflow:hidden;padding:8rem 12vw 9rem 6vw;background:#f0d9aa;color:#173f35}.forestHeart>div:first-child{max-width:530px}.forestHeart>div:first-child p{font-size:1.07rem;line-height:1.7}.forestHeartLines{position:relative;z-index:1}.forestHeartLines p{margin:0;padding:.55rem 0;border-bottom:1px solid #173f3540;font:500 clamp(1.7rem,3vw,3.4rem)/1.2 Fraunces,serif}.forestHeartLines p:last-child{color:#c35248}.forestHeart>img{position:absolute;right:-2%;bottom:-10%;width:20%;max-width:260px;opacity:.6}
-.mamaStory{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;padding:8rem 6vw;background:#fffaf0;color:#173f35}.mamaStory p{max-width:620px;font-size:clamp(1.12rem,1.5vw,1.4rem);line-height:1.8}
+.mummaStory{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;padding:8rem 6vw;background:#fffaf0;color:#173f35}.mummaStory p{max-width:620px;font-size:clamp(1.12rem,1.5vw,1.4rem);line-height:1.8}
 .editorialHero a:focus-visible,.forestCharacterTabs button:focus-visible{outline:3px solid #b75147;outline-offset:4px}
 @media(max-width:900px){.editorialHero{grid-template-columns:1fr;min-height:0}.editorialHeroCopy{padding:8rem 6vw 3rem}.editorialHeroCue{position:static;margin-top:2.5rem}.editorialHeroGallery{height:55vw;min-height:390px}.editorialHeroImage.image-1{left:0}.forestHeart{padding-right:6vw}}
-@media(max-width:600px){.editorialHeroCopy{padding:7rem 6vw 2.5rem}.editorialHeroCopy h1{font-size:clamp(3.2rem,14vw,5rem)}.editorialHeroActions{gap:1rem}.editorialHeroGallery{height:78vw;min-height:290px}.editorialHeroImage.image-2{width:38%;height:27%;border-width:3px}.editorialHeroImage.image-3{width:35%;height:26%;border-width:3px}.forestCharacterStage,.forestHeart,.mamaStory{grid-template-columns:1fr}.forestCharacterArt{min-height:320px}.forestCharacterArt img{max-height:310px}.forestCharacterCopy{padding:1.5rem 6vw 3rem}.forestCharacterTabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.6rem}.forestCharacterTabs button{white-space:nowrap}.cherryFeature{min-height:520px}.cherryFeature>div{margin:6vw}.forestHeart{padding:6rem 6vw}.forestHeart>img{width:30%;opacity:.25}.mamaStory{padding:6rem 6vw}}
+@media(max-width:600px){.editorialHeroCopy{padding:7rem 6vw 2.5rem}.editorialHeroCopy h1{font-size:clamp(3.2rem,14vw,5rem)}.editorialHeroActions{gap:1rem}.editorialHeroGallery{height:78vw;min-height:290px}.editorialHeroImage.image-2{width:38%;height:27%;border-width:3px}.editorialHeroImage.image-3{width:35%;height:26%;border-width:3px}.forestCharacterStage,.forestHeart,.mummaStory{grid-template-columns:1fr}.forestCharacterArt{min-height:320px}.forestCharacterArt img{max-height:310px}.forestCharacterCopy{padding:1.5rem 6vw 3rem}.forestCharacterTabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.6rem}.forestCharacterTabs button{white-space:nowrap}.cherryFeature{min-height:520px}.cherryFeature>div{margin:6vw}.forestHeart{padding:6rem 6vw}.forestHeart>img{width:30%;opacity:.25}.mummaStory{padding:6rem 6vw}}
 @media(prefers-reduced-motion:reduce){.editorialHeroImage,.editorialHeroActions a{transform:none!important;transition:none!important}}
 
 
@@ -1089,4 +1089,14 @@ html,body,#root{overflow-x:clip!important;overflow-y:visible!important}
   .scrollStorySlide{transform:none;transition:opacity .38s ease}
   .characterCarouselCard{will-change:auto;transition:transform .34s cubic-bezier(.2,.8,.2,1),opacity .25s,box-shadow .25s}
   .editorialFooter:after{animation:none}
+}
+
+/* Mobile typography: preserve whole words and give display type enough vertical room. */
+@media(max-width:650px){
+  h1,h2,h3,p,a,button{overflow-wrap:break-word;word-break:normal;hyphens:none}
+  .vaaniStory>*,.vaaniStoryCopy,.aboutStory>*,.aboutNarrative>*{min-width:0}
+  .vaaniStoryCopy h2{margin-bottom:1.5rem;font-size:clamp(2.35rem,10.5vw,3.35rem);line-height:1.08;letter-spacing:-.035em;text-wrap:pretty}
+  .vaaniStoryCopy h2 em{display:inline}
+  .vaaniStoryCopy .vaaniStoryLead{margin-top:0;font-size:clamp(1.08rem,4.8vw,1.3rem)!important;line-height:1.55!important}
+  .aboutNarrativeReveal h2,.forestCharactersHead h2,.playInvite h2,.bookFeatureCopy h2,.footerTop h2{line-height:1.08}
 }
