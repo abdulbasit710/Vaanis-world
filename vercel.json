@@ -1,9 +1,15 @@
 {
+  "redirects": [
+    {"source": "/bookshelf", "destination": "/books", "permanent": true}
+  ],
   "rewrites": [
     {"source": "/about", "destination": "/about/index.html"},
     {"source": "/books", "destination": "/books/index.html"},
     {"source": "/contact", "destination": "/contact/index.html"},
-    {"source": "/kids-activity", "destination": "/activity/index.html"},
-    {"source": "/((?!assets/|robots\\.txt$|sitemap\\.xml$|about/index\\.html$|books/index\\.html$|contact/index\\.html$|activity/index\\.html$).*)", "destination": "/index.html"}
+    {"source": "/kids-activity", "destination": "/activity/index.html"}
+  ],
+  "headers": [
+    {"source": "/sitemap.xml", "headers": [{"key": "Content-Type", "value": "application/xml; charset=utf-8"}]},
+    {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}
   ]
 }
