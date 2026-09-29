@@ -1,13 +1,6 @@
 import type {Plugin} from 'vite';
 import {cover,entities,host,pages} from './seo-data';
 type Page=readonly[string,string,string,string];
-const snapshots:Record<string,string>={
- home:`<main class="seoSnapshot"><h1>The Soul of the Forest by Vaani Halwasiya</h1><p>The official website of Vaani Halwasiya, author of <em>The Soul of the Forest</em>.</p><p>Discover an illustrated children’s story about feelings, friendship, kindness, family and finding your voice. Meet Voz, Dottie, Mona, Nancy, Knotty, Bumpy and Cherry Jerry in a magical forest.</p><nav><a href="/about">About Vaani Halwasiya</a> <a href="/books">Explore The Soul of the Forest</a> <a href="/kids-activity">Kids activities</a></nav></main>`,
- about:`<main class="seoSnapshot"><h1>Vaani Halwasiya, Children’s Book Author</h1><p>Vaani Halwasiya is the young author of <em>The Soul of the Forest</em>, an illustrated story inspired by feelings, family, friendship, kindness and imagination.</p><p>Learn about Vaani’s creative journey and the forest friends who help children recognize and understand their emotions.</p><a href="/books">Read about The Soul of the Forest</a></main>`,
- books:`<main class="seoSnapshot"><h1>The Soul of the Forest by Vaani Halwasiya</h1><p><em>The Soul of the Forest</em> is an illustrated children’s book by Vaani Halwasiya about emotions, kindness, friendship, family and the courage to find your voice.</p><p>Meet Voz and her forest friends in a warm story where every feeling has a place.</p><a href="/about">Meet author Vaani Halwasiya</a></main>`,
- contact:`<main class="seoSnapshot"><h1>Contact Vaani Halwasiya</h1><p>Contact the team behind author Vaani Halwasiya and <em>The Soul of the Forest</em> for reader messages, schools, libraries, events, interviews and collaborations.</p></main>`,
- activity:`<main class="seoSnapshot"><h1>The Soul of the Forest Kids Activities</h1><p>Play children’s puzzles and creative activities inspired by Vaani Halwasiya’s illustrated book, <em>The Soul of the Forest</em>.</p><a href="/books">Discover the book</a></main>`,
-};
 const faq={'@type':'FAQPage','@id':host+'/#faq',mainEntity:[
  {'@type':'Question',name:'What is The Soul of the Forest about?',acceptedAnswer:{'@type':'Answer',text:'It is an illustrated forest story about friendship, feelings, kindness, and finding a way back to happiness.'}},
  {'@type':'Question',name:'Which themes does the story explore?',acceptedAnswer:{'@type':'Answer',text:'It explores everyday emotions and the comfort children find in friendship, family, rest, creativity, and music.'}},
@@ -30,7 +23,7 @@ export const staticSeo=():Plugin=>({name:'static-route-seo',apply:'build',enforc
  if(!asset||asset.type!=='asset'||typeof asset.source!=='string')return;
  const base=asset.source.replace(/<title>.*?<\/title>/i,'').replace(/<meta\s+name=['"]description['"][^>]*>/i,'').replace(/<meta\s+property=['"]og:[^'"]+['"][^>]*>/gi,'');
  for(const [name,p] of Object.entries(pages)){
-  const html=base.replace('</head>',head(p)+'</head>').replace('<div id="root"></div>',`<div id="root">${snapshots[name]||''}</div>`);
+  const html=base.replace('</head>',head(p)+'</head>');
   if(name==='home')asset.source=html;else this.emitFile({type:'asset',fileName:name+'/index.html',source:html});
  }
 }});
