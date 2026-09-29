@@ -1,11 +1,13 @@
 import {InnerBanner} from '../components/InnerBanner';
 import {JigsawPuzzle} from '../components/JigsawPuzzle';
 import {WordScramble} from '../components/WordScramble';
+import {ColouringStudio} from '../components/ColouringStudio';
 
 export function KidsActivityPage(){return <main className="activityPage"><InnerBanner title="Kids Activity" eyebrow="Play in the forest" tagline="Little hands, bright ideas, and a forest full of playful discoveries."/>
  
  
- <section id="play-puzzle" className="activityIntro"><p>Forest activity no. 01</p><h2>A little memory.<br/>A lot of magic.</h2><p>Look closely for ten seconds. When the picture disappears, rebuild it one wonderful piece at a time.</p></section>
+ <ColouringStudio/>
+ <section id="play-puzzle" className="activityIntro"><p>Forest activity no. 02</p><h2>A little memory.<br/>A lot of magic.</h2><p>Look closely for ten seconds. When the picture disappears, rebuild it one wonderful piece at a time.</p></section>
  <JigsawPuzzle/>
  <WordScramble/>
  <section className="activityBenefits"><article><span>01</span><h3>Look closely</h3><p>Build visual memory by noticing tiny details in the forest and manuscript.</p></article><article><span>02</span><h3>Think creatively</h3><p>Fit puzzle pieces and arrange letters while learning through play.</p></article><article><span>03</span><h3>Celebrate</h3><p>Complete each challenge and celebrate every small discovery.</p></article></section>
