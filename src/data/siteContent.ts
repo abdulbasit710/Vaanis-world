@@ -23,5 +23,5 @@ export const siteContent={
   ['Where can I purchase the book?','Purchase details are coming soon.'],
  ],
  author:{heading:'Meet the imagination behind the forest',name:'Vaani Halwasiya',bio:'Author biography coming soon.'},
- socials:[],purchaseUrl:''
+ socials:[],purchaseUrl:'https://www.amazon.com/dp/1918933936#'
 };
