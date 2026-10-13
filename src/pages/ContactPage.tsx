@@ -35,7 +35,7 @@ export function ContactPage(){
    </div>
   </section>
   <section className="contactStory">
-   <div className="contactPortrait"><div><img src="/assets/vaani-author.jpeg" alt="Vaani Halwasiya with her dog"/></div><span className="portraitNote one">Young author</span><span className="portraitNote two">Big imagination</span><span className="portraitNote three">Kind stories</span></div>
+   <div className="contactPortrait"><div><img src="/assets/vaani-contact-with-dog.jpg" alt="Vaani Halwasiya with her dog"/></div><span className="portraitNote one">Young author</span><span className="portraitNote two">Big imagination</span><span className="portraitNote three">Kind stories</span></div>
    <div className="contactStoryCopy"><span>A note from the forest</span><h2>Stories mean more when they <em>start a conversation.</em></h2><p>Vaani’s world grew from feelings children know well: joy, tiredness, worry, frustration, friendship, and the comfort of someone who listens.</p><p>She hopes each message becomes another small bridge between young readers, families, teachers, and the stories that help us understand one another.</p><blockquote>“Every feeling deserves a place to belong.”</blockquote><div><a href="/about">Meet Vaani <b>↗</b></a><a href="/bookshelf">Explore the book</a></div></div>
   </section>
   <section className="contactReasons"><div className="contactReasonsHead"><span>Ways to connect</span><h2>What can you reach out about?</h2><p>Kind notes, useful questions, and thoughtful ideas are always a good place to begin.</p></div><div className="contactReasonGrid">{reasons.map(reason=><article key={reason.number}><span>{reason.number}</span><h3>{reason.title}</h3><p>{reason.text}</p></article>)}</div></section>
